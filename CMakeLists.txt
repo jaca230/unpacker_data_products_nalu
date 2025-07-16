@@ -20,39 +20,6 @@ include(CMakePackageConfigHelpers)
 # ------------------ CPM Setup ------------------
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/CPM.cmake)
 
-# spdlog (header-only)
-CPMAddPackage(
-  NAME spdlog
-  GITHUB_REPOSITORY gabime/spdlog
-  VERSION 1.13.0
-  OPTIONS "SPDLOG_BUILD_EXAMPLES OFF" "SPDLOG_BUILD_TESTS OFF" "SPDLOG_FMT_EXTERNAL OFF"
-  DOWNLOAD_ONLY YES
-)
-
-if(spdlog_ADDED)
-  add_library(spdlog_header_only INTERFACE)
-  target_include_directories(spdlog_header_only INTERFACE
-    $<BUILD_INTERFACE:${spdlog_SOURCE_DIR}/include>
-  )
-  add_library(spdlog::spdlog ALIAS spdlog_header_only)
-endif()
-
-# nlohmann_json (header-only)
-CPMAddPackage(
-  NAME nlohmann_json
-  GITHUB_REPOSITORY nlohmann/json
-  VERSION 3.11.3
-  DOWNLOAD_ONLY YES
-)
-
-if(nlohmann_json_ADDED)
-  add_library(nlohmann_json_header_only INTERFACE)
-  target_include_directories(nlohmann_json_header_only INTERFACE
-    $<BUILD_INTERFACE:${nlohmann_json_SOURCE_DIR}/include>
-  )
-  add_library(nlohmann_json::nlohmann_json ALIAS nlohmann_json_header_only)
-endif()
-
 # Required system packages
 find_package(ROOT REQUIRED COMPONENTS Core RIO)
 find_package(unpacker_data_products_core REQUIRED)
@@ -73,8 +40,6 @@ target_include_directories(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
-    spdlog_header_only
-    nlohmann_json_header_only
     ROOT::Core ROOT::RIO
     unpacker_data_products_core::unpacker_data_products_core
 )
@@ -137,12 +102,8 @@ if(CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
     INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
   )
 
-  install(TARGETS spdlog_header_only nlohmann_json_header_only
-    EXPORT ${PROJECT_NAME}Targets
-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-  )
-
-  install(DIRECTORY include/
+  
+  install(DIRECTORY inc
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
   )
 
