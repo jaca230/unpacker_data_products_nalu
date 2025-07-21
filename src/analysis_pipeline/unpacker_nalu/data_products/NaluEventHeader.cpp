@@ -1,4 +1,4 @@
-#include "data_products/nalu/NaluEventHeader.h"
+#include "analysis_pipeline/unpacker_nalu/data_products/NaluEventHeader.h"
 
 using namespace dataProducts;
 
@@ -12,27 +12,6 @@ NaluEventHeader::NaluEventHeader()
     ,channel_mask(0)
     ,num_windows(0)
     ,num_packets(0)
-{}
-
-NaluEventHeader::NaluEventHeader(
-     uint16_t event_header_arg
-    ,uint16_t event_info_arg
-    ,uint32_t event_index_arg
-    ,uint32_t event_reference_time_arg
-    ,uint16_t packet_size_arg
-    ,uint64_t channel_mask_arg
-    ,uint16_t num_windows_arg
-    ,uint16_t num_packets_arg
-    )
-    : DataProduct()
-    ,event_header(event_header_arg)
-    ,event_info(event_info_arg)
-    ,event_index(event_index_arg)
-    ,event_reference_time(event_reference_time_arg)
-    ,packet_size(packet_size_arg)
-    ,channel_mask(channel_mask_arg)
-    ,num_windows(num_windows_arg)
-    ,num_packets(num_packets_arg)
 {}
 
 NaluEventHeader::~NaluEventHeader() {};

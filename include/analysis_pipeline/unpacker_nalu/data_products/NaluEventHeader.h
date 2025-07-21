@@ -1,8 +1,7 @@
 #ifndef NALUEVENTHEADER_HH   
 #define NALUEVENTHEADER_HH
 
-#include "data_products/common/DataProduct.h"
-
+#include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
 namespace dataProducts {
 
     /**
@@ -18,20 +17,6 @@ namespace dataProducts {
              * @brief Default constructor.
              */
             NaluEventHeader();
-
-            /**
-             * @brief Constructor with event index.
-             * @param ...
-             */
-            NaluEventHeader(
-                 uint16_t event_header
-                ,uint16_t event_info
-                ,uint32_t event_index
-                ,uint32_t event_reference_time
-                ,uint16_t packet_size
-                ,uint64_t channel_mask
-                ,uint16_t num_windows
-                ,uint16_t num_packets);
 
             /**
              * @brief Destructor.

@@ -1,7 +1,7 @@
 #ifndef NALUPACKETFOOTER_HH   
 #define NALUPACKETFOOTER_HH
 
-#include "data_products/common/DataProduct.h"
+#include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
 
 namespace dataProducts {
 
@@ -18,13 +18,6 @@ namespace dataProducts {
              * @brief Default constructor.
              */
             NaluPacketFooter();
-
-            /**
-             * @brief Constructor with event index.
-             * @param parser_index Parser index
-             * @param packet_footer Packet footer
-             */
-            NaluPacketFooter(uint32_t parser_index, uint32_t packet_footer);
 
             /**
              * @brief Destructor.

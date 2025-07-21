@@ -1,7 +1,7 @@
 #ifndef NALUPACKETHEADER_HH   
 #define NALUPACKETHEADER_HH
 
-#include "data_products/common/DataProduct.h"
+#include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
 
 namespace dataProducts {
 
@@ -18,19 +18,6 @@ namespace dataProducts {
              * @brief Default constructor.
              */
             NaluPacketHeader();
-
-            /**
-             * @brief Constructor with event index.
-             * @param packet_header
-             */
-            NaluPacketHeader(
-                 uint16_t packet_header
-                ,uint16_t packet_info
-                ,uint16_t channel
-                ,uint32_t trigger_time
-                ,uint16_t logical_position
-                ,uint16_t window_position
-            );
 
             /**
              * @brief Destructor.

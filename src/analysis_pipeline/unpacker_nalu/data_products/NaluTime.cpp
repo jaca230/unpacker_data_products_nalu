@@ -1,4 +1,4 @@
-#include "data_products/nalu/NaluTime.h"
+#include "analysis_pipeline/unpacker_nalu/data_products/NaluTime.h"
 
 using namespace dataProducts;
 
@@ -17,32 +17,6 @@ NaluTime::NaluTime()
     ,total_time(0)
     ,data_processed(0)
     ,data_rate(0)
-{}
-
-/**
- * @brief Constructor
- *
- * @param
- */
-NaluTime::NaluTime(
-     uint64_t collection_cycle_index_arg
-    ,uint64_t collection_cycle_timestamp_ns_arg
-    ,double udp_time_arg
-    ,double parse_time_arg
-    ,double event_time_arg
-    ,double total_time_arg
-    ,uint64_t data_processed_arg
-    ,double data_rate_arg
-    )
-    : DataProduct()
-    ,collection_cycle_index(collection_cycle_index_arg)
-    ,collection_cycle_timestamp_ns(collection_cycle_timestamp_ns_arg)
-    ,udp_time(udp_time_arg)
-    ,parse_time(parse_time_arg)
-    ,event_time(event_time_arg)
-    ,total_time(total_time_arg)
-    ,data_processed(data_processed_arg)
-    ,data_rate(data_rate_arg)
 {}
 
 /**

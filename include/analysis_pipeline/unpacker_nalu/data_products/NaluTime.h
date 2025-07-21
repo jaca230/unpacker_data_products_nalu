@@ -1,7 +1,7 @@
 #ifndef NALUTIME_HH   
 #define NALUTIME_HH
 
-#include "data_products/common/DataProduct.h"
+#include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
 
 namespace dataProducts {
 
@@ -18,21 +18,6 @@ namespace dataProducts {
              * @brief Default constructor.
              */
             NaluTime();
-
-            /**
-             * @brief Constructor with event_footer index.
-             * @param event_footer 2 byte word in the footer
-             */
-            NaluTime(
-                 uint64_t collection_cycle_index
-                ,uint64_t collection_cycle_timestamp_ns
-                ,double udp_time
-                ,double parse_time
-                ,double event_time
-                ,double total_time
-                ,uint64_t data_processed
-                ,double data_rate
-            );
 
             /**
              * @brief Destructor.

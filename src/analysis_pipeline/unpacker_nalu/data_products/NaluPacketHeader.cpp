@@ -1,4 +1,4 @@
-#include "data_products/nalu/NaluPacketHeader.h"
+#include "analysis_pipeline/unpacker_nalu/data_products/NaluPacketHeader.h"
 
 using namespace dataProducts;
 
@@ -10,23 +10,6 @@ NaluPacketHeader::NaluPacketHeader()
     ,trigger_time(0)
     ,logical_position(0)
     ,window_position(0)
-{}
-
-NaluPacketHeader::NaluPacketHeader(
-     uint16_t packet_header_arg
-    ,uint16_t packet_info_arg
-    ,uint16_t channel_arg
-    ,uint32_t trigger_time_arg
-    ,uint16_t logical_position_arg
-    ,uint16_t window_position_arg
-    )
-    : DataProduct()
-    ,packet_header(packet_header_arg)
-    ,packet_info(packet_info_arg)
-    ,channel(channel_arg)
-    ,trigger_time(trigger_time_arg)
-    ,logical_position(logical_position_arg)
-    ,window_position(window_position_arg)
 {}
 
 NaluPacketHeader::~NaluPacketHeader() {};

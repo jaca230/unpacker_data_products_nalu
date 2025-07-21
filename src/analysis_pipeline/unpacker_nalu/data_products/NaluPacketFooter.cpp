@@ -1,4 +1,4 @@
-#include "data_products/nalu/NaluPacketFooter.h"
+#include "analysis_pipeline/unpacker_nalu/data_products/NaluPacketFooter.h"
 
 using namespace dataProducts;
 
@@ -6,15 +6,6 @@ NaluPacketFooter::NaluPacketFooter()
     : DataProduct(),
     parser_index(0),
     packet_footer(0)
-{}
-
-NaluPacketFooter::NaluPacketFooter(
-    uint32_t parser_index_arg,
-    uint32_t packet_footer_arg
-    )
-    : DataProduct(),
-    parser_index(parser_index_arg),
-    packet_footer(packet_footer_arg)
 {}
 
 NaluPacketFooter::~NaluPacketFooter() {};

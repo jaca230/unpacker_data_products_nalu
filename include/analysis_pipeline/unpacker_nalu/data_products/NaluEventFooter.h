@@ -1,7 +1,7 @@
 #ifndef NALUEVENTFOOTER_HH   
 #define NALUEVENTFOOTER_HH
 
-#include "data_products/common/DataProduct.h"
+#include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
 
 namespace dataProducts {
 
@@ -18,12 +18,6 @@ namespace dataProducts {
              * @brief Default constructor.
              */
             NaluEventFooter();
-
-            /**
-             * @brief Constructor with event_footer index.
-             * @param event_footer 2 byte word in the footer
-             */
-            NaluEventFooter(uint32_t event_footer);
 
             /**
              * @brief Destructor.

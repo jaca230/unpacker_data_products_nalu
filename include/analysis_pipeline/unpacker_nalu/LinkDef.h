@@ -10,22 +10,22 @@
 #pragma link C++ class dataProducts::NaluPacketHeader+;
 #pragma link C++ class std::vector<dataProducts::NaluPacketHeader>+;
 
-#pragma link C++ class dataProducts::NaluPacket+;
-#pragma link C++ class std::vector<dataProducts::NaluPacket>+;
-
 #pragma link C++ class dataProducts::NaluPacketFooter+;
 #pragma link C++ class std::vector<dataProducts::NaluPacketFooter>+;
 
-#pragma link C++ class dataProducts::NaluWaveform+;
-#pragma link C++ class std::vector<dataProducts::NaluWaveform>+;
+#pragma link C++ class dataProducts::NaluPayload+;
+#pragma link C++ class std::vector<dataProducts::NaluPayload>+;
+
+#pragma link C++ class dataProducts::NaluPacket+;
+#pragma link C++ class std::vector<dataProducts::NaluPacket>+;
 
 #pragma link C++ class dataProducts::NaluEventFooter+;
 #pragma link C++ class std::vector<dataProducts::NaluEventFooter>+;
 
+#pragma link C++ class dataProducts::NaluEvent+;
+#pragma link C++ class std::vector<dataProducts::NaluEvent>+;
+
 #pragma link C++ class dataProducts::NaluTime+;
 #pragma link C++ class std::vector<dataProducts::NaluTime>+;
-
-#pragma link C++ class dataProducts::NaluODB+;
-#pragma link C++ class std::vector<dataProducts::NaluODB>+;
 
 #endif

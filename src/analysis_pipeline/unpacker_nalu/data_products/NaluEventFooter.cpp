@@ -1,4 +1,4 @@
-#include "data_products/nalu/NaluEventFooter.h"
+#include "analysis_pipeline/unpacker_nalu/data_products/NaluEventFooter.h"
 
 using namespace dataProducts;
 
@@ -10,18 +10,6 @@ using namespace dataProducts;
 NaluEventFooter::NaluEventFooter()
     : DataProduct(),
       event_footer(0)
-{}
-
-/**
- * @brief Constructor with footer value.
- *
- * @param event_footer_arg 32-bit unsigned integer representing the event footer value.
- */
-NaluEventFooter::NaluEventFooter(
-    uint32_t event_footer_arg
-    )
-    : DataProduct(),
-      event_footer(event_footer_arg)
 {}
 
 /**
