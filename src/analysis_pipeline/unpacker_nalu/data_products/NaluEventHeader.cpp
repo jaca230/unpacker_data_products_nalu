@@ -1,5 +1,7 @@
 #include "analysis_pipeline/unpacker_nalu/data_products/NaluEventHeader.h"
 
+ClassImp(dataProducts::NaluEventHeader);
+
 using namespace dataProducts;
 
 NaluEventHeader::NaluEventHeader()

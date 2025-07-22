@@ -1,5 +1,7 @@
 #include "analysis_pipeline/unpacker_nalu/data_products/NaluEventFooter.h"
 
+ClassImp(dataProducts::NaluEventFooter);
+
 using namespace dataProducts;
 
 /**

@@ -1,5 +1,7 @@
 #include "analysis_pipeline/unpacker_nalu/data_products/NaluPayload.h"
 
+ClassImp(dataProducts::NaluPayload);
+
 using namespace dataProducts;
 
 NaluPayload::NaluPayload()

@@ -1,5 +1,7 @@
 #include "analysis_pipeline/unpacker_nalu/data_products/NaluPacket.h"
 
+ClassImp(dataProducts::NaluPacket);
+
 using namespace dataProducts;
 
 NaluPacket::NaluPacket()

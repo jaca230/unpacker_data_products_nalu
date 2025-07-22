@@ -1,5 +1,7 @@
 #include "analysis_pipeline/unpacker_nalu/data_products/NaluPacketFooter.h"
 
+ClassImp(dataProducts::NaluPacketFooter);
+
 using namespace dataProducts;
 
 NaluPacketFooter::NaluPacketFooter()

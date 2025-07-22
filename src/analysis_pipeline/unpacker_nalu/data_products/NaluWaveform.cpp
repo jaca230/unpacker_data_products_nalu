@@ -1,6 +1,8 @@
 #include "analysis_pipeline/unpacker_nalu/data_products/NaluWaveform.h"
 #include <numeric>
 
+ClassImp(dataProducts::NaluWaveform);
+
 using namespace dataProducts;
 
 NaluWaveform::NaluWaveform() : DataProduct() {}

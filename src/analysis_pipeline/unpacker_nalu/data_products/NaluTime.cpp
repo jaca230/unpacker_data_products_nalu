@@ -1,5 +1,7 @@
 #include "analysis_pipeline/unpacker_nalu/data_products/NaluTime.h"
 
+ClassImp(dataProducts::NaluTime);
+
 using namespace dataProducts;
 
 /**
