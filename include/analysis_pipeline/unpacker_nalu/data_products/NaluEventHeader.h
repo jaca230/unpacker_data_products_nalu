@@ -31,7 +31,7 @@ namespace dataProducts {
             /**
              * @brief Event info.
              */
-            uint16_t event_info;
+            uint8_t event_info;
 
             /**
              * @brief Index of the event.
@@ -56,7 +56,7 @@ namespace dataProducts {
             /**
              * @brief Number of windows
              */
-            uint16_t num_windows;
+            uint8_t num_windows;
 
             /**
              * @brief Number of packets.
