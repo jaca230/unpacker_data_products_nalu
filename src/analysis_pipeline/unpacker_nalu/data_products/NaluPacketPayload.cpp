@@ -1,21 +1,21 @@
-#include "analysis_pipeline/unpacker_nalu/data_products/NaluPayload.h"
+#include "analysis_pipeline/unpacker_nalu/data_products/NaluPacketPayload.h"
 #include <iostream>
 #include <sstream>
 
-ClassImp(dataProducts::NaluPayload);
+ClassImp(dataProducts::NaluPacketPayload);
 
 using namespace dataProducts;
 
-NaluPayload::NaluPayload()
+NaluPacketPayload::NaluPacketPayload()
     : DataProduct()
     , trace{}
 {}
 
-NaluPayload::~NaluPayload() {}
+NaluPacketPayload::~NaluPacketPayload() {}
 
-std::string NaluPayload::String() const {
+std::string NaluPacketPayload::String() const {
     std::ostringstream oss;
-    oss << "NaluPayload: trace = [";
+    oss << "NaluPacketPayload: trace = [";
     for (size_t i = 0; i < trace.size(); ++i) {
         oss << trace[i];
         if (i != trace.size() - 1)
@@ -25,6 +25,6 @@ std::string NaluPayload::String() const {
     return oss.str();
 }
 
-void NaluPayload::Show() const {
+void NaluPacketPayload::Show() const {
     std::cout << this->String() << std::endl;
 }

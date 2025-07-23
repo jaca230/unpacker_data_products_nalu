@@ -1,5 +1,5 @@
-#ifndef NALUPAYLOAD_HH
-#define NALUPAYLOAD_HH
+#ifndef NALU_PACKET_PAYLOAD_HH
+#define NALU_PACKET_PAYLOAD_HH
 
 #include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
 #include <array>
@@ -7,19 +7,19 @@
 
 namespace dataProducts {
 
-class NaluPayload : public DataProduct {
+class NaluPacketPayload : public DataProduct {
 public:
-    NaluPayload();
-    ~NaluPayload();
+    NaluPacketPayload();
+    ~NaluPacketPayload();
 
     std::array<uint16_t, 32> trace;
 
     std::string String() const;
     void Show() const override;
 
-    ClassDefOverride(NaluPayload, 1)
+    ClassDefOverride(NaluPacketPayload, 1)
 };
 
 } // namespace dataProducts
 
-#endif // NALUPAYLOAD_HH
+#endif // NALU_PACKET_PAYLOAD_HH

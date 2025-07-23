@@ -2,7 +2,7 @@
 #define NALUPACKET_HH
 
 #include "analysis_pipeline/unpacker_nalu/data_products/NaluPacketHeader.h"
-#include "analysis_pipeline/unpacker_nalu/data_products/NaluPayload.h"
+#include "analysis_pipeline/unpacker_nalu/data_products/NaluPacketPayload.h"
 #include "analysis_pipeline/unpacker_nalu/data_products/NaluPacketFooter.h"
 #include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
 
@@ -17,7 +17,7 @@ public:
     ~NaluPacket();
 
     NaluPacketHeader header;
-    NaluPayload payload;
+    NaluPacketPayload payload;
     NaluPacketFooter footer;
 
     std::string String() const;

@@ -13,8 +13,8 @@
 #pragma link C++ class dataProducts::NaluPacketFooter+;
 #pragma link C++ class std::vector<dataProducts::NaluPacketFooter>+;
 
-#pragma link C++ class dataProducts::NaluPayload+;
-#pragma link C++ class std::vector<dataProducts::NaluPayload>+;
+#pragma link C++ class dataProducts::NaluPacketPayload+;
+#pragma link C++ class std::vector<dataProducts::NaluPacketPayload>+;
 
 #pragma link C++ class dataProducts::NaluPacket+;
 #pragma link C++ class std::vector<dataProducts::NaluPacket>+;
