@@ -32,12 +32,12 @@ namespace dataProducts {
             /**
              * @brief Packet info
              */
-            uint16_t packet_info;
+            uint8_t packet_info;
 
             /**
              * @brief Channel
              */
-            uint16_t channel;
+            uint8_t channel;
 
             /**
              * @brief Trigger time

@@ -27,12 +27,12 @@ namespace dataProducts {
             /**
              * @brief Parser index.
              */
-            uint32_t parser_index;
+            uint16_t parser_index;
 
             /**
              * @brief Packet footer.
              */
-            uint32_t packet_footer;
+            uint16_t packet_footer;
 
             /**
              * @brief Make a string of this class's contents.
