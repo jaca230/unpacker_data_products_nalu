@@ -2,10 +2,8 @@
 #define NALUPAYLOAD_HH
 
 #include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
-
-#include <vector>
-#include <sstream>
-#include <iostream>
+#include <array>
+#include <string>
 
 namespace dataProducts {
 
@@ -14,12 +12,12 @@ public:
     NaluPayload();
     ~NaluPayload();
 
-    std::vector<uint16_t> trace;
+    std::array<uint16_t, 32> trace;
 
     std::string String() const;
     void Show() const override;
 
-    ClassDefOverride(NaluPayload,1)
+    ClassDefOverride(NaluPayload, 1)
 };
 
 } // namespace dataProducts
