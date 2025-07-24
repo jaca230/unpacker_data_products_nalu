@@ -10,8 +10,6 @@ namespace dataProducts {
 struct NaluPacketFooter {
     uint16_t parser_index;
     uint16_t packet_footer;
-
-    ClassDef(NaluPacketFooter, 1);
 };
 #pragma pack(pop)
 
