@@ -37,11 +37,9 @@ void NaluEvent::BuildWaveformsFromPackets() {
 std::string NaluEvent::String() const {
     std::ostringstream oss;
     oss << "\nNaluEvent:\n";
-    oss << header.String();
     for (const auto& pkt : packets.GetPackets()) {
         oss << pkt.String();
     }
-    oss << footer.String();
     return oss.str();
 }
 
