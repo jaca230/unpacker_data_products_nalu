@@ -27,7 +27,7 @@ namespace dataProducts {
             /**
              * @brief Index of the event.
              */
-            unsigned int event_footer;
+            uint16_t event_footer;
 
             /**
              * @brief Make a string of this class's contents.
