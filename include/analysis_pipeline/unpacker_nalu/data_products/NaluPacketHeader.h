@@ -15,8 +15,6 @@ struct NaluPacketHeader {
     uint32_t trigger_time;
     uint16_t logical_position;
     uint16_t window_position;
-
-    ClassDef(NaluPacketHeader, 1);
 };
 #pragma pack(pop)
 
