@@ -17,9 +17,7 @@ std::string NaluPacket::String() const {
     std::ostringstream oss;
     oss << std::endl;
     oss << "NaluPacket:" << std::endl;
-    oss << header.String();
-    oss << payload.String();
-    oss << footer.String();
+    // omit printing header, payload, footer details
     return oss.str();
 }
 

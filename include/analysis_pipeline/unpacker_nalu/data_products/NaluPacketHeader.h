@@ -1,72 +1,22 @@
-#ifndef NALUPACKETHEADER_HH   
+#ifndef NALUPACKETHEADER_HH
 #define NALUPACKETHEADER_HH
 
-#include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
+#include <cstdint>
+#include <TObject.h>
+#include <array>
 
 namespace dataProducts {
 
-    /**
-     * @class NaluPacketHeader
-     * @brief Represents the header information for a NALU packet.
-     *
-     * Inherits from DataProduct.
-     */
-    class NaluPacketHeader : public DataProduct {
+struct NaluPacketHeader {
+    uint16_t packet_header;
+    uint8_t packet_info;
+    uint8_t channel;
+    uint32_t trigger_time;
+    uint16_t logical_position;
+    uint16_t window_position;
 
-        public:
-            /**
-             * @brief Default constructor.
-             */
-            NaluPacketHeader();
-
-            /**
-             * @brief Destructor.
-             */
-            ~NaluPacketHeader();
-
-            /**
-             * @brief Packet header.
-             */
-            uint16_t packet_header;
-
-            /**
-             * @brief Packet info
-             */
-            uint8_t packet_info;
-
-            /**
-             * @brief Channel
-             */
-            uint8_t channel;
-
-            /**
-             * @brief Trigger time
-             */
-            uint32_t trigger_time;
-
-            /**
-             * @brief Logical position
-             */
-            uint16_t logical_position;
-
-            /**
-             * @brief Window position
-             */
-            uint16_t window_position;
-
-            /**
-             * @brief Make a string of this class's contents.
-             */
-            std::string String() const;
-
-            /**
-             * @brief Display the contents of the NaluPacketHeader.
-             */
-            void Show() const override;
-
-            /// ROOT class definition macro with versioning
-            ClassDefOverride(NaluPacketHeader,1)
-    };
+    ClassDef(NaluPacketHeader, 1);
+};
 
 } // namespace dataProducts
 

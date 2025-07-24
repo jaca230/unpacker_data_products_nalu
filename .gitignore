@@ -59,6 +59,9 @@ Desktop.ini
 /ccache/
 /.clangd
 
+# Deprecated
+/deprecated/
+
 # Coverage/test reports
 /coverage/
 /test-results/
