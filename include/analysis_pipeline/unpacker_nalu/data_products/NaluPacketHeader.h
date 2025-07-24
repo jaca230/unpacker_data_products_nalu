@@ -7,6 +7,7 @@
 
 namespace dataProducts {
 
+#pragma pack(push, 1)
 struct NaluPacketHeader {
     uint16_t packet_header;
     uint8_t packet_info;
@@ -17,6 +18,7 @@ struct NaluPacketHeader {
 
     ClassDef(NaluPacketHeader, 1);
 };
+#pragma pack(pop)
 
 } // namespace dataProducts
 

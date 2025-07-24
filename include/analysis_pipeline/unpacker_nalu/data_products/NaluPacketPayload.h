@@ -7,11 +7,13 @@
 
 namespace dataProducts {
 
+#pragma pack(push, 1)
 struct NaluPacketPayload {
     std::array<uint16_t, 32> trace;
 
     ClassDef(NaluPacketPayload, 1);
 };
+#pragma pack(pop)
 
 } // namespace dataProducts
 

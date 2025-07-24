@@ -4,10 +4,10 @@
 #pragma link off all classes;
 #pragma link off all functions;
 
-#pragma link C++ class dataProducts::NaluEventHeader+;
 #pragma link C++ struct dataProducts::NaluPacketHeader+;
 #pragma link C++ struct dataProducts::NaluPacketFooter+;
 #pragma link C++ struct dataProducts::NaluPacketPayload;
+#pragma link C++ class dataProducts::NaluEventHeader+;
 #pragma link C++ class dataProducts::NaluPacket+;
 #pragma link C++ class dataProducts::NaluPacketCollection+;
 #pragma link C++ class dataProducts::NaluEventFooter+;
