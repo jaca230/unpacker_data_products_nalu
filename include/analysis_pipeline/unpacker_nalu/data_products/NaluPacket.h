@@ -26,8 +26,6 @@ public:
     ClassDefOverride(NaluPacket,1)
 };
 
-typedef std::vector<NaluPacket> NaluPacketCollection;
-
 } // namespace dataProducts
 
 #endif // NALUPACKET_HH

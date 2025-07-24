@@ -77,12 +77,6 @@ namespace dataProducts {
             ClassDefOverride(NaluEventHeader,1)
     };
 
-    /**
-     * @typedef NaluEventHeaderCollection
-     * @brief A collection (vector) of NaluEventHeader objects.
-     */
-    typedef std::vector<NaluEventHeader> NaluEventHeaderCollection;
-
 } // namespace dataProducts
 
 #endif // NALUEVENTHEADER_HH

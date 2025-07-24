@@ -1,10 +1,12 @@
 #ifndef NALUEVENT_HH
 #define NALUEVENT_HH
 
-#include "analysis_pipeline/unpacker_nalu/data_products/NaluEventHeader.h"
-#include "analysis_pipeline/unpacker_nalu/data_products/NaluPacket.h"
-#include "analysis_pipeline/unpacker_nalu/data_products/NaluEventFooter.h"
 #include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
+
+#include "analysis_pipeline/unpacker_nalu/data_products/NaluEventHeader.h"
+#include "analysis_pipeline/unpacker_nalu/data_products/NaluPacketCollection.h"
+#include "analysis_pipeline/unpacker_nalu/data_products/NaluEventFooter.h"
+#include "analysis_pipeline/unpacker_nalu/data_products/NaluWaveformCollection.h"
 
 #include <vector>
 #include <sstream>
@@ -18,16 +20,17 @@ public:
     ~NaluEvent();
 
     NaluEventHeader header;
-    std::vector<NaluPacket> packets;
+    NaluPacketCollection packets;
     NaluEventFooter footer;
+    NaluWaveformCollection waveforms;
+
+    void BuildWaveformsFromPackets();
 
     std::string String() const;
     void Show() const override;
 
     ClassDefOverride(NaluEvent,1)
 };
-
-using NaluEventCollection = std::vector<NaluEvent>;
 
 } // namespace dataProducts
 

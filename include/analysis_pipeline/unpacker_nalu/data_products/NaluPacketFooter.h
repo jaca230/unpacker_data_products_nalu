@@ -48,12 +48,6 @@ namespace dataProducts {
             ClassDefOverride(NaluPacketFooter,1)
     };
 
-    /**
-     * @typedef NaluPacketFooterCollection
-     * @brief A collection (vector) of NaluPacketFooter objects.
-     */
-    typedef std::vector<NaluPacketFooter> NaluPacketFooterCollection;
-
 } // namespace dataProducts
 
 #endif // NALUPACKETFOOTER_HH

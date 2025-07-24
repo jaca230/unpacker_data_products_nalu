@@ -43,12 +43,6 @@ namespace dataProducts {
             ClassDefOverride(NaluEventFooter,1)
     };
 
-    /**
-     * @typedef NaluEventFooterCollection
-     * @brief A collection (vector) of NaluEventFooter objects.
-     */
-    typedef std::vector<NaluEventFooter> NaluEventFooterCollection;
-
 } // namespace dataProducts
 
 #endif // NALUEVENTFOOTER_HH

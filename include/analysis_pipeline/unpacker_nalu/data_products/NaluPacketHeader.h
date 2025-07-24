@@ -68,12 +68,6 @@ namespace dataProducts {
             ClassDefOverride(NaluPacketHeader,1)
     };
 
-    /**
-     * @typedef NaluPacketHeaderCollection
-     * @brief A collection (vector) of NaluPacketHeader objects.
-     */
-    typedef std::vector<NaluPacketHeader> NaluPacketHeaderCollection;
-
 } // namespace dataProducts
 
 #endif // NALUPACKETHEADER_HH

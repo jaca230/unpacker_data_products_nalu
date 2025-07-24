@@ -4,27 +4,30 @@
 #include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
 #include "analysis_pipeline/unpacker_nalu/data_products/NaluPacket.h"
 
+#include <vector>
+#include <string>
+
 namespace dataProducts {
 
-    class NaluWaveform : public DataProduct {
+class NaluWaveform : public DataProduct {
+public:
+    NaluWaveform();
+    ~NaluWaveform();
 
-        public:
+    void buildFromPackets(const std::vector<const NaluPacket*>& packets);
 
-            NaluWaveform();
-            ~NaluWaveform();
+    uint64_t channel_num = 0;
+    std::vector<short> trace;
 
-            void buildFromPackets(const NaluPacketCollection& packets);
+    // New member: samples per packet, default 32
+    size_t samples_per_packet = 32;
 
-            uint64_t channel_num = 0;
-            std::vector<short> trace;
+    std::string String() const;
+    void Show() const override;
 
-            std::string String() const;
-            void Show() const override;
+    ClassDefOverride(NaluWaveform, 1)
+};
 
-            ClassDefOverride(NaluWaveform, 1)
-    };
-
-    typedef std::vector<NaluWaveform> NaluWaveformCollection;
 
 } // namespace dataProducts
 

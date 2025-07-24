@@ -5,30 +5,17 @@
 #pragma link off all functions;
 
 #pragma link C++ class dataProducts::NaluEventHeader+;
-#pragma link C++ class std::vector<dataProducts::NaluEventHeader>+;
-
 #pragma link C++ class dataProducts::NaluPacketHeader+;
-#pragma link C++ class std::vector<dataProducts::NaluPacketHeader>+;
-
 #pragma link C++ class dataProducts::NaluPacketFooter+;
-#pragma link C++ class std::vector<dataProducts::NaluPacketFooter>+;
-
 #pragma link C++ class dataProducts::NaluPacketPayload+;
-#pragma link C++ class std::vector<dataProducts::NaluPacketPayload>+;
-
 #pragma link C++ class dataProducts::NaluPacket+;
-#pragma link C++ class std::vector<dataProducts::NaluPacket>+;
-
+#pragma link C++ class dataProducts::NaluPacketCollection+;
 #pragma link C++ class dataProducts::NaluEventFooter+;
-#pragma link C++ class std::vector<dataProducts::NaluEventFooter>+;
-
 #pragma link C++ class dataProducts::NaluEvent+;
-#pragma link C++ class std::vector<dataProducts::NaluEvent>+;
-
+#pragma link C++ class dataProducts::NaluEventCollection+;
 #pragma link C++ class dataProducts::NaluTime+;
-#pragma link C++ class std::vector<dataProducts::NaluTime>+;
-
+#pragma link C++ class dataProducts::NaluTimeCollection+;
 #pragma link C++ class dataProducts::NaluWaveform+;
-#pragma link C++ class std::vector<dataProducts::NaluWaveform>+;
+#pragma link C++ class dataProducts::NaluWaveformCollection+;
 
 #endif

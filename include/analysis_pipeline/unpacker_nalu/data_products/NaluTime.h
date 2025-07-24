@@ -78,12 +78,6 @@ namespace dataProducts {
             ClassDefOverride(NaluTime,1)
     };
 
-    /**
-     * @typedef NaluTimeCollection
-     * @brief A collection (vector) of NaluTime objects.
-     */
-    typedef std::vector<NaluTime> NaluTimeCollection;
-
 } // namespace dataProducts
 
 #endif // NALUTIME_HH
