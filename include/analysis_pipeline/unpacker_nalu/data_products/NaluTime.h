@@ -1,23 +1,26 @@
 #ifndef NALUTIME_HH
 #define NALUTIME_HH
 
-#include <cstdint>
+#include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
+#include "analysis_pipeline/unpacker_nalu/data_products/NaluTimeData.h"
+
+#include <TObject.h>
 
 namespace dataProducts {
 
-#pragma pack(push, 1)
-struct NaluTime {
-    uint64_t collection_cycle_index;
-    uint64_t collection_cycle_timestamp_ns;
-    double udp_time;
-    double parse_time;
-    double event_time;
-    double total_time;
-    uint64_t data_processed;
-    double data_rate;
+class NaluTime : public DataProduct {
+public:
+    NaluTime();
+    ~NaluTime();
+
+    NaluTimeData time;
+
+    void Print(Option_t* option = "") const override;
+    void Show() const override;
+
+    ClassDefOverride(NaluTime, 1);
 };
-#pragma pack(pop)
 
-} // namespace dataProducts
+}  // namespace dataProducts
 
-#endif // NALUTIME_HH
+#endif  // NALUTIME_HH

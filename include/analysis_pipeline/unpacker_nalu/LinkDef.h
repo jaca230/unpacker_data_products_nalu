@@ -12,7 +12,9 @@
 #pragma link C++ class dataProducts::NaluWaveformCollection+;
 #pragma link C++ class dataProducts::NaluEvent+;
 
-#pragma link C++ struct dataProducts::NaluTime+;
+#pragma link C++ struct dataProducts::NaluTimeData+;
+#pragma link C++ class dataProducts::NaluTime+;
+
 
 
 #endif
