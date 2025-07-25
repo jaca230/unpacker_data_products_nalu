@@ -1,30 +1,30 @@
 #ifndef NALUPACKET_HH
 #define NALUPACKET_HH
 
-#include "analysis_pipeline/unpacker_nalu/data_products/NaluPacketHeader.h"
-#include "analysis_pipeline/unpacker_nalu/data_products/NaluPacketPayload.h"
-#include "analysis_pipeline/unpacker_nalu/data_products/NaluPacketFooter.h"
-#include "analysis_pipeline/unpacker_core/data_products/DataProduct.h"
-
-#include <sstream>
-#include <iostream>
+#include <cstdint>
+#include <array>
+#include <TObject.h>
 
 namespace dataProducts {
 
-class NaluPacket : public DataProduct {
-public:
-    NaluPacket();
-    ~NaluPacket();
+#pragma pack(push, 1)
+struct NaluPacket {
+    // --- Header ---
+    uint16_t packet_header;
+    uint8_t packet_info;
+    uint8_t channel;
+    uint32_t trigger_time;
+    uint16_t logical_position;
+    uint16_t window_position;
 
-    NaluPacketHeader header;
-    NaluPacketPayload payload;
-    NaluPacketFooter footer;
+    // --- Payload ---
+    std::array<uint16_t, 32> trace;
 
-    std::string String() const;
-    void Show() const override;
-
-    ClassDefOverride(NaluPacket,1)
+    // --- Footer ---
+    uint16_t parser_index;
+    uint16_t packet_footer;
 };
+#pragma pack(pop)
 
 } // namespace dataProducts
 

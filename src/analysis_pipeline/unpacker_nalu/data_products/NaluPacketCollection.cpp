@@ -28,4 +28,9 @@ void NaluPacketCollection::Print(Option_t*) const {
     std::cout << "NaluPacketCollection with " << packets.size() << " packet(s)" << std::endl;
 }
 
+void NaluPacketCollection::Show() const {
+    Print();
+}
+
+
 } // namespace dataProducts

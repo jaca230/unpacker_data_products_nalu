@@ -26,7 +26,7 @@ public:
 
     void BuildWaveformsFromPackets();
 
-    std::string String() const;
+    void Print(Option_t* option = "") const override;
     void Show() const override;
 
     ClassDefOverride(NaluEvent,1)

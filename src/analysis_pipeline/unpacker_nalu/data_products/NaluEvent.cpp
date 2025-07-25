@@ -23,7 +23,7 @@ void NaluEvent::BuildWaveformsFromPackets() {
     std::unordered_map<uint64_t, std::vector<const NaluPacket*>> channel_to_packet_ptrs;
 
     for (const auto& pkt : packets.GetPackets()) {
-        channel_to_packet_ptrs[pkt.header.channel].push_back(&pkt);
+        channel_to_packet_ptrs[pkt.channel].push_back(&pkt);
     }
 
     // Build waveforms per channel
@@ -34,15 +34,20 @@ void NaluEvent::BuildWaveformsFromPackets() {
     }
 }
 
-std::string NaluEvent::String() const {
-    std::ostringstream oss;
-    oss << "\nNaluEvent:\n";
-    for (const auto& pkt : packets.GetPackets()) {
-        oss << pkt.String();
+void NaluEvent::Print(Option_t* option) const {
+    std::cout << "NaluEvent Summary:\n";
+    std::cout << "  Event Index: " << header.event_index << "\n";
+    std::cout << "  Trigger time: " << header.event_reference_time << "\n";
+    std::cout << "  Number of packets: " << packets.GetPackets().size() << "\n";
+    std::cout << "  Number of waveforms: " << waveforms.GetWaveforms().size() << "\n";
+
+    // Optionally add more verbose output if requested
+    if (std::string(option) == "full") {
+        std::cout << "  (Full dump not implemented yet)\n";
     }
-    return oss.str();
 }
 
 void NaluEvent::Show() const {
-    std::cout << this->String();
+    Print();
 }
+

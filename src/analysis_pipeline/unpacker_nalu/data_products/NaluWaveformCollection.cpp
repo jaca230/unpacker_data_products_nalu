@@ -28,4 +28,8 @@ void NaluWaveformCollection::Print(Option_t*) const {
     std::cout << "NaluWaveformCollection with " << waveforms.size() << " waveform(s)" << std::endl;
 }
 
+void NaluWaveformCollection::Show() const {
+    Print();
+}
+
 } // namespace dataProducts

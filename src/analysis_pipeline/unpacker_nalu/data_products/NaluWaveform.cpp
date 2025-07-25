@@ -15,13 +15,13 @@ void NaluWaveform::buildFromPackets(const std::vector<const NaluPacket*>& packet
 
     if (packets.empty()) return;
 
-    channel_num = packets.front()->header.channel;
+    channel_num = packets.front()->channel;
 
     std::vector<std::pair<uint16_t, const NaluPacket*>> ordered_packets;
     ordered_packets.reserve(packets.size());
 
     for (const auto* pkt : packets) {
-        ordered_packets.emplace_back(pkt->header.window_position, pkt);
+        ordered_packets.emplace_back(pkt->window_position, pkt);
     }
 
     // Sort by window_position
@@ -48,22 +48,24 @@ void NaluWaveform::buildFromPackets(const std::vector<const NaluPacket*>& packet
     trace.reserve(samples_per_packet * final_order.size());
 
     for (const auto* pkt : final_order) {
-        trace.insert(trace.end(), pkt->payload.trace.begin(), pkt->payload.trace.end());
+        for (uint16_t be_sample : pkt->trace) {
+            // Convert from big endian to host (assumed little endian)
+            uint16_t le_sample = (be_sample >> 8) | (be_sample << 8);
+            trace.push_back(le_sample);
+        }
     }
 }
 
-std::string NaluWaveform::String() const {
-    std::ostringstream oss;
-    oss << "\nNaluWaveform:\n";
-    oss << "    channel_num: " << channel_num << "\n";
-    oss << "    trace: ";
-    for (const auto& sample : trace) {
-        oss << sample << ", ";
+void NaluWaveform::Print(Option_t* option) const {
+    std::cout << "NaluWaveform: channel " << channel_num << ", samples: " << trace.size() << "\n";
+    if (std::string(option) == "full") {
+        std::cout << "Trace data: ";
+        for (auto s : trace) std::cout << s << ", ";
+        std::cout << "\n";
     }
-    oss << "\n";
-    return oss.str();
 }
 
 void NaluWaveform::Show() const {
-    std::cout << this->String();
+    Print();
 }
+
