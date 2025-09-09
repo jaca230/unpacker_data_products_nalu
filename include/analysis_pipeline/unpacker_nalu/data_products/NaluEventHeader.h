@@ -11,6 +11,9 @@ struct NaluEventHeader {
     uint8_t event_info;
     uint32_t event_index;
     uint32_t event_reference_time;
+    uint32_t time_threshold;
+    uint32_t event_completion_time_us;
+    uint32_t clock_frequency;
     uint16_t packet_size;
     uint64_t channel_mask;
     uint8_t num_windows;
