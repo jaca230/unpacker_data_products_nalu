@@ -15,6 +15,9 @@
 #pragma link C++ struct dataProducts::NaluTimeData+;
 #pragma link C++ class dataProducts::NaluTime+;
 
-
+// STL containers
+#pragma link C++ class std::vector<short>+;
+#pragma link C++ class std::vector<dataProducts::NaluWaveform>+;
+#pragma link C++ class std::vector<dataProducts::NaluPacket>+;
 
 #endif
