@@ -16,10 +16,6 @@ void NaluWaveformCollection::SetWaveforms(std::vector<NaluWaveform>&& new_wavefo
     waveforms = std::move(new_waveforms);
 }
 
-const std::vector<NaluWaveform>& NaluWaveformCollection::GetWaveforms() const {
-    return waveforms;
-}
-
 void NaluWaveformCollection::Clear() {
     waveforms.clear();
 }

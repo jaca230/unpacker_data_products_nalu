@@ -22,7 +22,7 @@ void NaluEvent::BuildWaveformsFromPackets() {
     // Map channel -> vector of pointers to packets (no copies)
     std::unordered_map<uint64_t, std::vector<const NaluPacket*>> channel_to_packet_ptrs;
 
-    for (const auto& pkt : packets.GetPackets()) {
+    for (const auto& pkt : packets.packets) {
         channel_to_packet_ptrs[pkt.channel].push_back(&pkt);
     }
 
@@ -38,8 +38,8 @@ void NaluEvent::Print(Option_t* option) const {
     std::cout << "NaluEvent Summary:\n";
     std::cout << "  Event Index: " << header.event_index << "\n";
     std::cout << "  Trigger time: " << header.event_reference_time << "\n";
-    std::cout << "  Number of packets: " << packets.GetPackets().size() << "\n";
-    std::cout << "  Number of waveforms: " << waveforms.GetWaveforms().size() << "\n";
+    std::cout << "  Number of packets: " << packets.packets.size() << "\n";
+    std::cout << "  Number of waveforms: " << waveforms.waveforms.size() << "\n";
 
     // Optionally add more verbose output if requested
     if (std::string(option) == "full") {

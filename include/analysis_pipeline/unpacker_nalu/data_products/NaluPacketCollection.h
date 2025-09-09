@@ -5,23 +5,23 @@
 #include "analysis_pipeline/unpacker_nalu/data_products/NaluPacket.h"
 #include <TObject.h>
 #include <vector>
+#include <iostream>
 
 namespace dataProducts {
 
 class NaluPacketCollection : public DataProduct {
 public:
-    NaluPacketCollection();
-    ~NaluPacketCollection();
+    NaluPacketCollection() = default;
+    ~NaluPacketCollection() = default;
 
     void AddPacket(NaluPacket&& pkt);
     void SetPackets(std::vector<NaluPacket>&& new_packets);
-    const std::vector<NaluPacket>& GetPackets() const;
-
 
     void Clear();
     void Print(Option_t* option = "") const override;
     void Show() const override;
 
+    // Exposed directly, no getter
     std::vector<NaluPacket> packets;
 
     ClassDefOverride(NaluPacketCollection, 1);

@@ -14,13 +14,12 @@ public:
 
     void AddWaveform(NaluWaveform&& wf);
     void SetWaveforms(std::vector<NaluWaveform>&& new_waveforms);
-    const std::vector<NaluWaveform>& GetWaveforms() const;
 
     void Clear();
     void Print(Option_t* option = "") const override;
     void Show() const override;
 
-private:
+    // now public for PyROOT access
     std::vector<NaluWaveform> waveforms;
 
     ClassDefOverride(NaluWaveformCollection, 1);

@@ -1,12 +1,8 @@
 #include "analysis_pipeline/unpacker_nalu/data_products/NaluPacketCollection.h"
-#include <iostream>
 
 ClassImp(dataProducts::NaluPacketCollection)
 
 namespace dataProducts {
-
-NaluPacketCollection::NaluPacketCollection() = default;
-NaluPacketCollection::~NaluPacketCollection() = default;
 
 void NaluPacketCollection::AddPacket(NaluPacket&& pkt) {
     packets.emplace_back(std::move(pkt));
@@ -14,10 +10,6 @@ void NaluPacketCollection::AddPacket(NaluPacket&& pkt) {
 
 void NaluPacketCollection::SetPackets(std::vector<NaluPacket>&& new_packets) {
     packets = std::move(new_packets);
-}
-
-const std::vector<NaluPacket>& NaluPacketCollection::GetPackets() const {
-    return packets;
 }
 
 void NaluPacketCollection::Clear() {
@@ -31,6 +23,5 @@ void NaluPacketCollection::Print(Option_t*) const {
 void NaluPacketCollection::Show() const {
     Print();
 }
-
 
 } // namespace dataProducts
