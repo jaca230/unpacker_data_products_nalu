@@ -8,15 +8,15 @@
 
 namespace dataProducts {
 
-class NaluTime : public DataProduct {
+class NaluTime : public TObject {
 public:
     NaluTime();
     ~NaluTime();
 
     NaluTimeData time;
 
-    void Print(Option_t* option = "") const override;
-    void Show() const override;
+    void Print(Option_t* option = "") const;
+    void Show() const;
 
     ClassDefOverride(NaluTime, 1);
 };

@@ -9,7 +9,7 @@
 
 namespace dataProducts {
 
-class NaluWaveform : public DataProduct {
+class NaluWaveform : public TObject {
 public:
     NaluWaveform();
     ~NaluWaveform();
@@ -22,8 +22,8 @@ public:
     // New member: samples per packet, default 32
     size_t samples_per_packet = 32;
 
-    void Print(Option_t* option = "") const override;
-    void Show() const override;
+    void Print(Option_t* option = "") const;
+    void Show() const;
 
     ClassDefOverride(NaluWaveform, 1)
 };

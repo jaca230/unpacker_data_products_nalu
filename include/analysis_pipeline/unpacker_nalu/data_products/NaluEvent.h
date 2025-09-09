@@ -14,7 +14,7 @@
 
 namespace dataProducts {
 
-class NaluEvent : public DataProduct {
+class NaluEvent : public TObject {
 public:
     NaluEvent();
     ~NaluEvent();
@@ -26,8 +26,8 @@ public:
 
     void BuildWaveformsFromPackets();
 
-    void Print(Option_t* option = "") const override;
-    void Show() const override;
+    void Print(Option_t* option = "") const;
+    void Show() const;
 
     ClassDefOverride(NaluEvent,1)
 };

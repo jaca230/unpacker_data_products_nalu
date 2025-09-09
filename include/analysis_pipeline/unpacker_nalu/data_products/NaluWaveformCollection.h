@@ -7,7 +7,7 @@
 
 namespace dataProducts {
 
-class NaluWaveformCollection : public DataProduct {
+class NaluWaveformCollection : public TObject {
 public:
     NaluWaveformCollection();
     ~NaluWaveformCollection();
@@ -16,10 +16,9 @@ public:
     void SetWaveforms(std::vector<NaluWaveform>&& new_waveforms);
 
     void Clear();
-    void Print(Option_t* option = "") const override;
-    void Show() const override;
+    void Print(Option_t* option = "") const;
+    void Show() const;
 
-    // now public for PyROOT access
     std::vector<NaluWaveform> waveforms;
 
     ClassDefOverride(NaluWaveformCollection, 1);

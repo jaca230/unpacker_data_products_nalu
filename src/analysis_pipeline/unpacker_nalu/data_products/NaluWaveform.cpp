@@ -7,7 +7,7 @@ ClassImp(dataProducts::NaluWaveform);
 
 using namespace dataProducts;
 
-NaluWaveform::NaluWaveform() : DataProduct() {}
+NaluWaveform::NaluWaveform() {}
 NaluWaveform::~NaluWaveform() {}
 
 void NaluWaveform::buildFromPackets(const std::vector<const NaluPacket*>& packets) {

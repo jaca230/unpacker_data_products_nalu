@@ -8,8 +8,7 @@ ClassImp(dataProducts::NaluEvent);
 using namespace dataProducts;
 
 NaluEvent::NaluEvent()
-    : DataProduct()
-    , header()
+    : header()
     , packets()
     , footer()
 {}
