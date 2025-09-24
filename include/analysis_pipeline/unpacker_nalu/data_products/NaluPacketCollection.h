@@ -18,7 +18,7 @@ public:
     void SetPackets(std::vector<NaluPacket>&& new_packets);
 
     void Clear();
-    void Print(Option_t* option = "") const;
+    void Print(Option_t* option = "") const override;
     void Show() const;
 
     // Exposed directly, no getter
