@@ -15,7 +15,7 @@ public:
 
     NaluTimeData time;
 
-    void Print(Option_t* option = "") const;
+    void Print(Option_t* option = "") const override;
     void Show() const;
 
     ClassDefOverride(NaluTime, 1);
