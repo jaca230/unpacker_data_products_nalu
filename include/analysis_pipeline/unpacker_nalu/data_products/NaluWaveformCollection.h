@@ -16,7 +16,7 @@ public:
     void SetWaveforms(std::vector<NaluWaveform>&& new_waveforms);
 
     void Clear();
-    void Print(Option_t* option = "") const;
+    void Print(Option_t* option = "") const override;
     void Show() const;
 
     std::vector<NaluWaveform> waveforms;
