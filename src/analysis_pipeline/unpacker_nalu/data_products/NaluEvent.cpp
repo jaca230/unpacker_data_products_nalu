@@ -18,15 +18,20 @@ NaluEvent::~NaluEvent() {}
 void NaluEvent::BuildWaveformsFromPackets() {
     waveforms.Clear();
 
-    // Map channel -> vector of pointers to packets (no copies)
-    std::unordered_map<uint64_t, std::vector<const NaluPacket*>> channel_to_packet_ptrs;
+    // Map (channel, trigger_time) -> vector of pointers to packets (no copies)
+    std::unordered_map<uint64_t, std::vector<const NaluPacket*>> grouped_packet_ptrs;
+    auto make_key = [](uint8_t channel, uint32_t trigger_time) -> uint64_t {
+        return (static_cast<uint64_t>(channel) << 32) |
+               static_cast<uint64_t>(trigger_time);
+    };
 
     for (const auto& pkt : packets.packets) {
-        channel_to_packet_ptrs[pkt.channel].push_back(&pkt);
+        const uint64_t key = make_key(pkt.channel, pkt.trigger_time);
+        grouped_packet_ptrs[key].push_back(&pkt);
     }
 
-    // Build waveforms per channel
-    for (auto& [channel, pkt_ptrs] : channel_to_packet_ptrs) {
+    // Build waveforms per (channel, trigger_time)
+    for (auto& [key, pkt_ptrs] : grouped_packet_ptrs) {
         NaluWaveform wf;
         wf.buildFromPackets(pkt_ptrs);
         waveforms.AddWaveform(std::move(wf));
@@ -49,4 +54,3 @@ void NaluEvent::Print(Option_t* option) const {
 void NaluEvent::Show() const {
     Print();
 }
-
