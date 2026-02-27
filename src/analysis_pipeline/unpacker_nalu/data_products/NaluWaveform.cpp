@@ -15,6 +15,7 @@ void NaluWaveform::buildFromPackets(const std::vector<const NaluPacket*>& packet
     if (packets.empty()) return;
 
     channel_num = packets.front()->channel;
+    trigger_time = packets.front()->trigger_time;
 
     // --- Step 1: Pair window_position with packet pointer ---
     std::vector<std::pair<uint16_t, const NaluPacket*>> ordered_packets;
@@ -70,6 +71,7 @@ void NaluWaveform::buildFromPackets(const std::vector<const NaluPacket*>& packet
 
 void NaluWaveform::Print(Option_t* option) const {
     std::cout << "NaluWaveform: channel " << channel_num
+              << ", trigger_time " << trigger_time
               << ", samples: " << trace.size() << "\n";
     if (std::string(option) == "full") {
         std::cout << "Trace data: ";

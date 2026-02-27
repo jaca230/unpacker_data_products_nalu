@@ -17,6 +17,7 @@ public:
     void buildFromPackets(const std::vector<const NaluPacket*>& packets);
 
     uint64_t channel_num = 0;
+    uint32_t trigger_time = 0;
     std::vector<short> trace;
 
     // New member: samples per packet, default 32
@@ -25,7 +26,7 @@ public:
     void Print(Option_t* option = "") const override;
     void Show() const;
 
-    ClassDefOverride(NaluWaveform, 1)
+    ClassDefOverride(NaluWaveform, 2)
 };
 
 
