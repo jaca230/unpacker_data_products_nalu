@@ -20,4 +20,10 @@
 #pragma link C++ class std::vector<dataProducts::NaluWaveform>+;
 #pragma link C++ class std::vector<dataProducts::NaluPacket>+;
 
+#pragma link C++ class dataProducts::NaluBuilderSource+;
+#pragma link C++ class dataProducts::NaluBuilderEvent+;
+#pragma link C++ class dataProducts::NaluCollectionTiming+;
+#pragma link C++ class dataProducts::NaluSelectionSummary+;
+#pragma link C++ class std::vector<dataProducts::NaluBuilderSource>+;
+
 #endif
